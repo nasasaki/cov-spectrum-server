@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.client.RestTemplate
 
 
-const val MODEL_ENDPOINT = "https://cov-spectrum.org/api/model-chen2021fitness"
+val MODEL_ENDPOINT: String = System.getenv("APP_MODEL_ENDPOINT_CH") ?: "";
 
 @RestController
 @RequestMapping("/computed/model/chen2021Fitness")
