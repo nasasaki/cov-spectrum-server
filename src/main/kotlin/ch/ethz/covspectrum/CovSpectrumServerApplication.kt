@@ -12,7 +12,10 @@ import org.springframework.boot.runApplication
 class CovSpectrumServerApplication
 
 fun main(args: Array<String>) {
-    val flyway = Flyway.configure().dataSource(getDbJdbcUrl(), getDbUser(), getDbPassword()).load()
+    val flyway = Flyway.configure()
+    .dataSource(getDbJdbcUrl(), getDbUser(), getDbPassword())
+    .baselineOnMigrate(true)
+    .load()
     flyway.migrate()
     runApplication<CovSpectrumServerApplication>(*args)
 }

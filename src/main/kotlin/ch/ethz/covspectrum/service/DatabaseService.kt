@@ -413,7 +413,7 @@ class DatabaseService {
         """.trimIndent()
         // Not the safest random generator but should be good enough for our use case
         val adminKey = (1..21)
-            .map { i -> kotlin.random.Random.nextInt(0, charPool.size) }
+            .map { _ -> kotlin.random.Random.nextInt(0, charPool.size) }
             .map(charPool::get)
             .joinToString("")
         var id: Int
